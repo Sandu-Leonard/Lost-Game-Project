@@ -78,19 +78,5 @@ public class PlayerFPSMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime); 
     }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Elevator"))
-        {
-            transform.parent = other.transform;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        transform.parent = null;
-    }
     
 }

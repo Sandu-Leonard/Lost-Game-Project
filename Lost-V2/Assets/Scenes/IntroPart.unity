@@ -1026,6 +1026,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56462302}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069685, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_Name
       value: Point Light
@@ -1083,6 +1087,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144380726}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069685, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_Name
       value: Point Light
@@ -2587,7 +2595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8699951
+      value: -0.816
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2595,7 +2603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4509964
+      value: 2.277
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3088,7 +3096,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 39851010, z: 4.5904e-41, w: 0.000000010811696}
@@ -4430,7 +4438,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 39851010, z: 4.5904e-41, w: 0.0000000049778244}
@@ -5654,7 +5662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0050049
+      value: 1.522
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5662,7 +5670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2009964
+      value: 1.955
       objectReference: {fileID: 0}
     - target: {fileID: 550363471892104543, guid: 7af2ec6fea7a70546bb8d7c34c7f5233, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5772,6 +5780,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552870936}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069685, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_Name
       value: Point Light
@@ -6194,7 +6206,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 3.3078e-41, y: 0, z: 0, w: 0}
@@ -8074,6 +8086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 231700361}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069685, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_Name
       value: Point Light
@@ -8214,7 +8230,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 2.7484e-41, y: 0, z: 0, w: 0}
@@ -9407,6 +9423,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1183294769}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069685, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_Name
       value: Point Light
@@ -10070,6 +10090,10 @@ PrefabInstance:
     - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -10801,6 +10825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1241627591}
     m_Modifications:
+    - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918751411058313036, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10856,6 +10884,10 @@ PrefabInstance:
     - target: {fileID: 3918751411058678636, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_Name
       value: Chandelier_Small (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
@@ -12029,7 +12061,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 5.0181997e+10, z: 4.5904e-41, w: 0}
@@ -13600,7 +13632,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 5.0181997e+10, z: 4.5904e-41, w: 0}
@@ -13753,7 +13785,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 4.314446e+37, y: 0, z: 0, w: 0}
