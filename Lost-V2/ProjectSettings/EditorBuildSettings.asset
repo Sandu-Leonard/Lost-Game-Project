@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: ae5d2ccdc7d84f84f97ab01c62027c14
+    guid: 402625b0a16e0bb4984bb80c41996af3
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity
     guid: 754ca0fa6b31cf7408d3e6f1f23f1abb
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kitchen.unity
     guid: fa5139dc2a60d444db7cca8370b61d35
+  - enabled: 1
+    path: Assets/Scenes/TrapsRoom.unity
+    guid: dc644b44a09ac584bab6cf7a477af27c
   m_configObjects: {}

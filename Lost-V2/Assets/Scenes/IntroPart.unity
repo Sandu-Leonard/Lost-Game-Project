@@ -1027,6 +1027,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 56462302}
     m_Modifications:
     - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -1087,6 +1091,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144380726}
     m_Modifications:
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
@@ -1819,7 +1831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.0000025629995
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1827,7 +1839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1839,7 +1851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 2160663275077105478, guid: 3cc48b39efb854e4e9df4545fdbca20c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3088,7 +3100,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4430,7 +4442,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5781,6 +5793,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1552870936}
     m_Modifications:
     - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -6198,7 +6214,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8087,6 +8103,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 231700361}
     m_Modifications:
     - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -8222,7 +8242,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9424,6 +9444,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1183294769}
     m_Modifications:
     - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403118346395069684, guid: 2971a87332792664a8850261e425b09c, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -10086,6 +10110,10 @@ PrefabInstance:
     - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
       propertyPath: m_Intensity
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108750730081052300, guid: 1d0e4f1499cebaa4992504fcb17e8871, type: 3}
       propertyPath: m_Lightmapping
@@ -10884,6 +10912,10 @@ PrefabInstance:
     - target: {fileID: 3918751411058678636, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_Name
       value: Chandelier_Small (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
@@ -12053,7 +12085,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13596,7 +13628,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
@@ -13624,7 +13656,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13777,7 +13809,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

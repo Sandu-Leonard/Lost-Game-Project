@@ -11,7 +11,7 @@ public enum TriggerMethod
 
 public class SceneLoader : MonoBehaviour
 {
-    public Transform player;
+    //public Transform player;
     public TriggerMethod triggerMethod;
 
     private bool isLoaded;

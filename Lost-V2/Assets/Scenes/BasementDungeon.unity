@@ -1649,6 +1649,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -1699,6 +1703,10 @@ PrefabInstance:
     - target: {fileID: 3918751411058678636, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_Name
       value: Chandelier_Small (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
@@ -2599,8 +2607,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
@@ -2802,8 +2818,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
@@ -3212,8 +3236,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
@@ -3346,6 +3378,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -3396,6 +3432,10 @@ PrefabInstance:
     - target: {fileID: 3918751411058678636, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_Name
       value: Chandelier_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
@@ -3894,8 +3934,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
@@ -4154,6 +4202,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751410480782499, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
@@ -4204,6 +4256,10 @@ PrefabInstance:
     - target: {fileID: 3918751411058678636, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_Name
       value: Chandelier_Small (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411303488595, guid: bf7a7fc00791eb945a5412768a68fffc, type: 3}
       propertyPath: m_BounceIntensity
@@ -4954,8 +5010,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321368119863, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586093321435195190, guid: 4b437f1c2454a2c409b1b7f35e69d661, type: 3}
       propertyPath: m_BounceIntensity
