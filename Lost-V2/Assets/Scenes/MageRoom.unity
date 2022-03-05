@@ -7456,6 +7456,8 @@ MonoBehaviour:
   interactionType: 0
   index: 0
   doorOpenCloseSpeed: 2
+  openDoorSound: {fileID: 0}
+  closeDoorSound: {fileID: 0}
   doorOpenAngle: -90
   doorCloseAngle: 0
   doorRotationXAxis: 0
@@ -7522,6 +7524,8 @@ MonoBehaviour:
   interactionType: 0
   index: 0
   doorOpenCloseSpeed: 2
+  openDoorSound: {fileID: 0}
+  closeDoorSound: {fileID: 0}
   doorOpenAngle: 90
   doorCloseAngle: 0
   doorRotationXAxis: 0

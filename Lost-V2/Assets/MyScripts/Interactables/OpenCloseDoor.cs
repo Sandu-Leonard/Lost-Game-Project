@@ -9,6 +9,11 @@ public class OpenCloseDoor : Interactable
     bool isOpen = false;
     [SerializeField]
     float doorOpenCloseSpeed = 2f;
+    [SerializeField]
+    AudioSource openDoorSound;
+    [SerializeField]
+    AudioSource closeDoorSound;
+
 
     [Header("Rotations")]
     [SerializeField]
@@ -42,6 +47,7 @@ public class OpenCloseDoor : Interactable
     {
         if (PlayerInventory.keys[index] == true)
         {
+            openDoorSound.Play();
             isOpen = true;
             StartCoroutine(AutoCloseDoor());          
         }    
@@ -69,6 +75,7 @@ public class OpenCloseDoor : Interactable
     IEnumerator AutoCloseDoor()
     {
         yield return new WaitForSeconds(timeBeforeDoorCloses);
+        closeDoorSound.Play();
         isOpen = false;
     }
 }
