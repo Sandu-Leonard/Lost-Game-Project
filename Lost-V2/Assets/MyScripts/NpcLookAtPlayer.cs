@@ -24,7 +24,6 @@ public class NpcLookAtPlayer : MonoBehaviour
                 {
                     anim.SetLookAtWeight(1);
                     anim.SetLookAtPosition(player.position);
-
                 }
             }
             else

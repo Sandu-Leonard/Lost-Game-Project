@@ -14,6 +14,8 @@ public class OpenCloseDoor : Interactable
     [SerializeField]
     AudioSource closeDoorSound;
 
+    bool isSoundPlayed = false;
+
 
     [Header("Rotations")]
     [SerializeField]
@@ -46,8 +48,7 @@ public class OpenCloseDoor : Interactable
     public void OpenAndCloseDoor()
     {
         if (PlayerInventory.keys[index] == true)
-        {
-            openDoorSound.Play();
+        {           
             isOpen = true;
             StartCoroutine(AutoCloseDoor());          
         }    

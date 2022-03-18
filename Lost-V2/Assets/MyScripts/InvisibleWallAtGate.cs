@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-public class InvisibleWallAtGate : Interactable
+public class InvisibleWallAtGate : MonoBehaviour
 {
     [SerializeField]
     GameObject textToShow;
@@ -8,45 +8,24 @@ public class InvisibleWallAtGate : Interactable
     [SerializeField]
     GameObject playerTorch;
 
-
-    private void Update()
-    {
-        DeactivateInvisibleWall();
-    }
+    string playerTag = "Player";
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && !isTextShown)
+        if (other.tag == playerTag && !Interactable.isTextShown)
         {
             textToShow.SetActive(true);
-            isTextShown = true;
+            Interactable.isTextShown = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             textToShow.SetActive(false);
-            isTextShown = false;
+            Interactable.isTextShown = false;
         }
     }
 
-    void DeactivateInvisibleWall()
-    {
-        if (playerTorch.activeInHierarchy == true)
-        {          
-            gameObject.SetActive(false);
-        }
-    }
-
-    public override string GetDescription()
-    {
-        return "";
-    }
-
-    public override void Interact()
-    {
-        
-    }
 }

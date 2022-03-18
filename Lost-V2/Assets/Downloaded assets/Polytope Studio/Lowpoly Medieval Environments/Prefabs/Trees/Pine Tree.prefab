@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8139306236123809429}
   - component: {fileID: 3940227790074720740}
-  - component: {fileID: -1655988000747552897}
+  - component: {fileID: 5073396988535297776}
   m_Layer: 0
   m_Name: Pine Tree
   m_TagString: Untagged
@@ -295,20 +295,20 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4976981
+  - screenRelativeHeight: 0.65021145
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4324524935850628773}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.33702055
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4638044351695276680}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0.16463006
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5624711370870518306}
   m_Enabled: 1
---- !u!136 &-1655988000747552897
+--- !u!136 &5073396988535297776
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,7 +318,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4165085
-  m_Height: 6.442488
+  m_Radius: 0.25431824
+  m_Height: 3.8952975
   m_Direction: 1
-  m_Center: {x: 0, y: 2.572365, z: 0}
+  m_Center: {x: 0, y: 0.78, z: -0.09}
