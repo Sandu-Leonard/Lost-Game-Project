@@ -9,7 +9,6 @@ using TMPro;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] string gameLevelScene;
-    [SerializeField] MonoBehaviour fpsControllerScript;
     [SerializeField] GameObject menu;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     [Header("Loading Screen")]
@@ -23,38 +22,20 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] TMP_Text volumeTextValue = null;
     [SerializeField] Slider volumeSlider;
 
-    
-
     private void Awake()
     {
-        PlayerPrefs.GetInt("QualitySetting");
+        LoadSettings();
     }
 
     public void StartGameYesButton()
-    {
+    {       
         HideMenu();
         PlayerPrefs.GetFloat("MasterVolume");
         //Load the Scene asynchronously in the background
         scenesToLoad.Add(SceneManager.LoadSceneAsync(gameLevelScene));
-        ////Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
+        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
         scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
-        StartCoroutine(LoadingScreen());     
-    }
 
-
-    IEnumerator LoadingScreen()
-    {
-        loadingInterface.SetActive(true);
-        float totalProgress = 0;
-        for (int i = 0; i < scenesToLoad.Count; i++)
-        {
-            while (!scenesToLoad[i].isDone)
-            {              
-                totalProgress += scenesToLoad[i].progress;
-                loadingProgressBar.fillAmount = totalProgress / scenesToLoad.Count;
-                yield return null;
-            }
-        }      
     }
 
     private void HideMenu()
@@ -85,7 +66,13 @@ public class MainMenuManager : MonoBehaviour
     public void VolumeApplyButton()
     {
         PlayerPrefs.SetFloat("MasterVolume", AudioListener.volume);
-        PlayerPrefs.Save();
     }
 
+    void LoadSettings()
+    {
+        if (PlayerPrefs.HasKey("QualitySetting"))
+            dropDownQuality.value = PlayerPrefs.GetInt("QualitySetting");
+        if (PlayerPrefs.HasKey("MasterVolume"))
+            volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+    }
 }

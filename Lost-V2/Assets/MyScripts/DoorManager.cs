@@ -36,7 +36,7 @@ public class DoorManager : Interactable
         {
             hasKey = true;
         }
-    }
+    } 
 
     public override string GetDescription()
     {

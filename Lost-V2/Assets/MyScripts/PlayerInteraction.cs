@@ -47,13 +47,6 @@ public class PlayerInteraction : MonoBehaviour
                     interactable.Interact();
                 }
                 break;
-
-            case Interactable.InteractionType.openCloseDoor:
-                if (Input.GetKeyDown(key))
-                {
-                    interactable.Interact();
-                }
-                break;
         }
     }
 

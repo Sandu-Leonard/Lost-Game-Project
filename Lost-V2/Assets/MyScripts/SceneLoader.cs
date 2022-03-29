@@ -16,7 +16,6 @@ public class SceneLoader : MonoBehaviour
 
     private bool isLoaded;
     private bool shouldLoad;
-
     void Start()
     {
         if (SceneManager.sceneCount > 0)

@@ -35,11 +35,11 @@ public class PauseManager : MonoBehaviour
     }
     void PauseGame()
     {
-        pauseMenuScreen.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         fpsControllerScript.enabled = false;
+        pauseMenuScreen.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;        
         AudioListener.pause = true;
         gameIsPaused = true;
     }

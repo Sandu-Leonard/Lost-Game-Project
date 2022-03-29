@@ -6,7 +6,8 @@ public class KeyScript : Interactable
 
     public override string GetDescription()
     {
-        return "Pick up Key";
+        return $"Pick up {gameObject.name}";
+        
     }
 
     public override void Interact()

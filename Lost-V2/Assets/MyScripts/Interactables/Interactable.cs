@@ -5,8 +5,7 @@ public abstract class Interactable : MonoBehaviour
     public static bool isObjectiveShown;
     public enum InteractionType
     {
-        onKeyPress,
-        openCloseDoor
+        onKeyPress
     }
 
     public InteractionType interactionType;

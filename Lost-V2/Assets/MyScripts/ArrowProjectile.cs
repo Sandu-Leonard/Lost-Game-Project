@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowProjectile : MonoBehaviour
-{
-    Rigidbody rigidbody;
+{ 
     BoxCollider boxCollider;
+    [SerializeField]Rigidbody rigidB;
     [SerializeField] float arrowSpeed = 300f;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
     }
 
     private void Update()
     {
-        rigidbody.AddRelativeForce(new Vector3(0, 0, arrowSpeed));
+        rigidB.AddRelativeForce(new Vector3(0, 0, arrowSpeed));
     }
 
 
@@ -29,4 +28,5 @@ public class ArrowProjectile : MonoBehaviour
             //respawn player
         }
     }
+
 }
