@@ -24,9 +24,9 @@ public class CutsceneToGameplay : MonoBehaviour
         playerCamera.SetActive(false);   
         fpsControllerScript.enabled = false;
         yield return new WaitForSeconds((float)timelineIntro.duration);
-        timelineIntro.enabled = false;
-        fpsControllerScript.enabled = true;
         playerCamera.SetActive(true);
+        fpsControllerScript.enabled = true;
+        timelineIntro.enabled = false;               
         cutsceneStarted = false;
     }
 }

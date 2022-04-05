@@ -33,9 +33,8 @@ public class MainMenuManager : MonoBehaviour
         PlayerPrefs.GetFloat("MasterVolume");
         //Load the Scene asynchronously in the background
         scenesToLoad.Add(SceneManager.LoadSceneAsync(gameLevelScene));
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene"));
         //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-       // scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
 
     }
 
