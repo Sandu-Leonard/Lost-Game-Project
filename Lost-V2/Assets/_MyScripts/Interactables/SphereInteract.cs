@@ -3,6 +3,7 @@ using UnityEngine;
 public class SphereInteract : Interactable
 {
     [SerializeField] GameObject sphereLight;
+    [SerializeField] GameObject rockKey;
     bool isSphereOn = false;
     bool pressed = false;
 
@@ -19,9 +20,9 @@ public class SphereInteract : Interactable
     }
     public override string GetDescription()
     {
-        if (!isSphereOn)
+        if (!isSphereOn && !rockKey.activeInHierarchy)
             return "Press [E] to activate!";
-        else
+        else 
             return "";
     }
 
@@ -32,7 +33,7 @@ public class SphereInteract : Interactable
 
     private void ActivateSphere()
     {
-        if (!pressed)
+        if (!pressed && !rockKey.activeInHierarchy)
         {
             pressed = true;
             OpenDoorToPart2.numberOfActiveSpheres++;

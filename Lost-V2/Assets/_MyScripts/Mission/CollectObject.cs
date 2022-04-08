@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-
 public class CollectObject : Interactable
 {
+    [SerializeField] TMP_Text missionStatus;
     public override string GetDescription()
     {
         return "Press [E] to collect.";
@@ -17,6 +16,8 @@ public class CollectObject : Interactable
     void CollectTheObject()
     {
         gameObject.SetActive(false);
-        CollectMission.numberOfObjectsCollected++;   
+        CollectMission.numberOfItemsToCollect--;
+        missionStatus.text = $"{CollectMission.numberOfItemsToCollect} left";
     }
+
 }

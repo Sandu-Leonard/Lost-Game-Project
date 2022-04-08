@@ -21,7 +21,10 @@ public class DialogueMainMage : Interactable
         timeline.SetActive(false);
         fpsController.enabled = true;
         cutsceneStarted = false;
-        missionSelectionScript.SetActive(true);
+        if (MissionSelection.numberOfCompletedMissions < 2)
+        {
+            missionSelectionScript.SetActive(true);
+        }
         dialogueScript.SetActive(false);
     }
 

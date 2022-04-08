@@ -1,36 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WoodPieceInteractable : Interactable
 {
-    public static int numberOfBrokenPieces;
-    [SerializeField]
-    GameObject woodPiece;
-
-    [SerializeField]
-    GameObject crowbar;
-
+    [SerializeField] GameObject woodPiece;
+    [SerializeField] TMP_Text missionStatus;
     public override string GetDescription()
     {
-        if (crowbar.activeInHierarchy)
-            return "Press [E] to break";
-        else
-            return "You need something to break this with.";
+        return "Press [E] to break";
     }
 
     public override void Interact()
     {
-        BreakWoodPieces(); 
+        BreakWoodPieces();
     }
 
     void BreakWoodPieces()
-    {
-        if (crowbar.activeInHierarchy)
-        {
-            gameObject.SetActive(false);
-            woodPiece.SetActive(true);
-            numberOfBrokenPieces++;
-        }
+    { 
+        gameObject.SetActive(false);
+        woodPiece.SetActive(true);
+        BreakMission.numberOfBrokenPieces--;
+        missionStatus.text = $"{BreakMission.numberOfBrokenPieces} left";
     }
 }
+

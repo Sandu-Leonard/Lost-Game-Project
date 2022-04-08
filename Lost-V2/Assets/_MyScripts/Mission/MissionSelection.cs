@@ -6,19 +6,24 @@ public class MissionSelection : Interactable
 {
     bool cutsceneStarted = false;
     [SerializeField] MonoBehaviour fpsController;
-    [SerializeField] GameObject missonsScreen;
     [SerializeField] BoxCollider mageBoxCollider;
+    [SerializeField] GameObject missionsPanel;
 
     [Header("Collect Mission")]
     [SerializeField] GameObject collectMission;
     [Header("Break Mission")]
     [SerializeField] GameObject breakMission;
-    [Header("Retrieve Mission")]
-    [SerializeField] GameObject retrieveMission;
     [Space(10)]
     [SerializeField] GameObject isMissionOnScreen;
+    [Space(10)]
+    [SerializeField] GameObject basementKey;
 
-    public static bool isAnyMissonInProgress = false;
+    public GameObject collectMissionStatus;
+    public GameObject breakMissionStatus;
+    public GameObject completeMissionStatus;
+
+    public static bool isAnyMissionInProgress = false;
+    public static int numberOfCompletedMissions = 0;
 
     public override string GetDescription()
     {
@@ -30,16 +35,15 @@ public class MissionSelection : Interactable
     public override void Interact()
     {
         if (!cutsceneStarted)
-        {
             ShowMissions();
-        }
     }
 
+
     void ShowMissions()
-    {
+    { 
         mageBoxCollider.enabled = false;
         fpsController.enabled = false;
-        missonsScreen.SetActive(true);
+        missionsPanel.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -48,49 +52,43 @@ public class MissionSelection : Interactable
     {
         mageBoxCollider.enabled = true;
         fpsController.enabled = true;
-        missonsScreen.SetActive(false);
     }
 
     public void AcceptCollectMission()
     {
-        if (!isAnyMissonInProgress)
+        if (!isAnyMissionInProgress)
         {
-            mageBoxCollider.enabled = true;
+            AcceptMission();
             collectMission.SetActive(true);
-            fpsController.enabled = true;
-            isAnyMissonInProgress = true;
+            collectMissionStatus.SetActive(true);
         }
         else
-        {
-            isMissionOnScreen.SetActive(true);
-        }
+            ActivateIsMissionOnScreen();
+
     }
     public void AcceptBreakMission()
     {
-        if (!isAnyMissonInProgress)
+        if (!isAnyMissionInProgress)
         {
-            mageBoxCollider.enabled = true;
+            AcceptMission();
+            basementKey.SetActive(true);
+            breakMissionStatus.SetActive(true);
             breakMission.SetActive(true);
-            fpsController.enabled = true;
-            isAnyMissonInProgress = true;
         }
         else
-        {
-            isMissionOnScreen.SetActive(true);
-        }
+            ActivateIsMissionOnScreen();
     }
-    public void AcceptRetrieveMission()
+    void AcceptMission()
     {
-        if (!isAnyMissonInProgress)
-        {
-            mageBoxCollider.enabled = true;
-            retrieveMission.SetActive(true);
-            fpsController.enabled = true;
-            isAnyMissonInProgress = true;
-        }
-        else
-        {
-            isMissionOnScreen.SetActive(true);
-        }
+        mageBoxCollider.enabled = true;
+        fpsController.enabled = true;
+        isAnyMissionInProgress = true;
     }
+
+    void ActivateIsMissionOnScreen()
+    {
+        isMissionOnScreen.SetActive(true);
+    }
+
+
 }

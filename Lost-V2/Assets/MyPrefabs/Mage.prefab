@@ -2295,7 +2295,6 @@ GameObject:
   m_Component:
   - component: {fileID: 670767762385620957}
   - component: {fileID: 627602172392744509}
-  - component: {fileID: 675443964837456642}
   m_Layer: 0
   m_Name: PT_Medieval_Priest_StPatrick
   m_TagString: Untagged
@@ -2430,24 +2429,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.021321952, y: -0.13488495, z: -0.052521527}
     m_Extent: {x: 0.57769233, y: 0.9995614, z: 0.21224219}
   m_DirtyAABB: 0
---- !u!114 &675443964837456642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674552084256550801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade6293558c3dac4cb20069cbb69aa4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionType: 0
-  dialogueMage: {fileID: 0}
-  timeline: {fileID: 0}
-  fpsController: {fileID: 0}
-  dialogueScript: {fileID: 0}
-  missionSelectionScript: {fileID: 0}
 --- !u!1 &675443964598952042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +2561,7 @@ MonoBehaviour:
   - {fileID: 0}
   mageBoxCollider: {fileID: 675443964957385763}
   missionSelection: {fileID: 675443964998504212}
+  missionCompleteUI: {fileID: 0}
 --- !u!1 &675443964998504212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,8 +2621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   fpsController: {fileID: 0}
-  missonsScreen: {fileID: 0}
   mageBoxCollider: {fileID: 675443964998504233}
+  missionsPanel: {fileID: 0}
   collectMission: {fileID: 0}
   breakMission: {fileID: 0}
   retrieveMission: {fileID: 0}

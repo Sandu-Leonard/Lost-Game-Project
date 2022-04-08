@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CollectMission : MonoBehaviour
 {
-    public static int numberOfObjectsCollected;
+    public static int numberOfItemsToCollect = 5;
     [SerializeField] GameObject[] objectsToCollect;
-    [SerializeField] GameObject completedMissionTrigger;
-    [SerializeField] GameObject missionSelection;
+    [SerializeField] Button collectMissionButton;
+
+    [SerializeField]
+    UnityEvent CollectMissionEvent;
 
     private void Update()
     {
-        if (numberOfObjectsCollected == objectsToCollect.Length)
+        if (numberOfItemsToCollect == 0)
         {
-            completedMissionTrigger.SetActive(true);
-            missionSelection.SetActive(false);
-            MissionSelection.isAnyMissonInProgress = false;
+            MissionProgress();
+            CollectMissionEvent.Invoke();         
         }
     }
+
+    void MissionProgress()
+    {
+        MissionSelection.isAnyMissionInProgress = false;
+        MissionSelection.numberOfCompletedMissions += 1;
+        collectMissionButton.interactable = false;
+    }
+
 }

@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Kitchen.unity
     guid: fa5139dc2a60d444db7cca8370b61d35
   - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 498afbc3648cb0f4a987fc7221c8da8f
+  - enabled: 1
     path: Assets/Scenes/TrapsRoom.unity
     guid: dc644b44a09ac584bab6cf7a477af27c
   m_configObjects: {}
