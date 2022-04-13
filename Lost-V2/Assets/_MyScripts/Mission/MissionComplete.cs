@@ -4,23 +4,29 @@ using System.Collections;
 
 public class MissionComplete : Interactable
 {
+    [Header("Timeline")]
     [SerializeField] PlayableDirector dialogueMage;
     [SerializeField] GameObject timeline;
+    [Header("Player Movement Script")]
     [SerializeField] MonoBehaviour playerFpsController;
+    [Space(10)]
     [SerializeField] GameObject[] objectsToActivate;
+    [Header("Mage Collider")]
     [SerializeField] BoxCollider mageBoxCollider;
+    [Header("Mission Selection Script")]
     [SerializeField] GameObject missionSelection;
-
+    [Header("Mission Status")]
     [SerializeField] GameObject completeMissionStatus;
     [SerializeField] GameObject finishedMissionsDialogue;
 
+    bool cutsceneSkipped = false;
     IEnumerator CompleteMission()
     {
         timeline.SetActive(true);
         playerFpsController.enabled = false;
         mageBoxCollider.enabled = false;
         completeMissionStatus.SetActive(false);
-        yield return new WaitForSeconds((float)dialogueMage.duration);
+        yield return new WaitForSeconds((float)((float)dialogueMage.duration - dialogueMage.time));
         timeline.SetActive(false);
         playerFpsController.enabled = true;
         foreach (var obj in objectsToActivate)
@@ -39,7 +45,15 @@ public class MissionComplete : Interactable
 
     public override void Interact()
     {
-
         StartCoroutine(CompleteMission());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && cutsceneSkipped == false)
+        {
+            dialogueMage.time = dialogueMage.duration - 1;
+            cutsceneSkipped = true;
+        }
     }
 }

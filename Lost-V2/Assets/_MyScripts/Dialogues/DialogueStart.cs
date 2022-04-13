@@ -1,24 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Events;
 
 public class DialogueStart : Interactable
 {
-    [SerializeField] PlayableDirector dialogueMage;
-    [SerializeField] GameObject timeline;
-    [SerializeField] MonoBehaviour fpsController;
+    [SerializeField] PlayableDirector playableDirector;
+
+    [SerializeField] UnityEvent startCutscene;
+    [SerializeField] UnityEvent stopCutscene;
+
     bool cutsceneStarted = false;
+    bool cutsceneSkipped = false;
 
     IEnumerator StartCutscene()
     {
         cutsceneStarted = true;
-        timeline.SetActive(true);
-        fpsController.enabled = false;
-        yield return new WaitForSeconds((float)dialogueMage.duration);
-        timeline.SetActive(false);
-        fpsController.enabled = true;
+        startCutscene.Invoke();
+        yield return new WaitUntil(()=>cutsceneSkipped);
+        stopCutscene.Invoke();
         cutsceneStarted = false;
+        cutsceneSkipped = false;
+    }
+
+    private void Update()
+    {
+        if (cutsceneStarted)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && cutsceneSkipped == false)
+            {
+                playableDirector.time = playableDirector.duration - 1;
+                cutsceneSkipped = true;
+            }
+        }
     }
 
     public override string GetDescription()

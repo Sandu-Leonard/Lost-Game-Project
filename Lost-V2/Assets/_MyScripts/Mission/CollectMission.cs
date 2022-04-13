@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class CollectMission : MonoBehaviour
 {
+    [SerializeField]
     public static int numberOfItemsToCollect = 5;
     [SerializeField] GameObject[] objectsToCollect;
     [SerializeField] Button collectMissionButton;

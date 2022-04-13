@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject[] gameObjects;
 
     private void Awake()
     {

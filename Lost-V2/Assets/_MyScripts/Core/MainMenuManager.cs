@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Loading Screen")]
     [SerializeField] GameObject loadingInterface;
     [SerializeField] Image loadingProgressBar;
-    
+
     [Header("Graphics dropdown")]
     [SerializeField] TMP_Dropdown dropDownQuality;
 
@@ -28,13 +28,15 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void StartGameYesButton()
-    {       
+    {
         HideMenu();
+        //ShowLoadingScreen();
         PlayerPrefs.GetFloat("MasterVolume");
-        //Load the Scene asynchronously in the background
+        //scenesToLoad.Add(SceneManager.UnloadSceneAsync("MainMenu"));
         scenesToLoad.Add(SceneManager.LoadSceneAsync(gameLevelScene));
-        //Additive mode adds the Scene to the current loaded Scenes, in this case Gameplay scene
-        scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
+       // scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
+        //scenesToLoad.Add(SceneManager.LoadSceneAsync("IntroPart", LoadSceneMode.Additive));
+        StartCoroutine(LoadingScreen());
 
     }
 
@@ -75,4 +77,43 @@ public class MainMenuManager : MonoBehaviour
         if (PlayerPrefs.HasKey("MasterVolume"))
             volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
     }
+
+    void ShowLoadingScreen()
+    {
+        loadingInterface.SetActive(true);
+    }
+
+    IEnumerator LoadingScreen()
+    {
+        loadingInterface.SetActive(true);
+        //float totalProgress = 0;
+        //for (int i = 0; i < scenesToLoad.Count; i++)
+        //{
+        //    while (!scenesToLoad[i].isDone)
+        //    {
+        //        totalProgress = 0;
+        //        foreach (AsyncOperation operation in scenesToLoad)
+        //        {
+        //            totalProgress += operation.progress;
+        //        }
+        //        totalProgress = (totalProgress / scenesToLoad.Count);
+        //        loadingProgressBar.fillAmount = Mathf.RoundToInt(totalProgress);
+        //        yield return null;
+        //    }
+
+        //}
+        //loadingInterface.SetActive(false); 
+        float totalProgress = 0;
+        for (int i = 0; i < scenesToLoad.Count; i++)
+        {
+            while (!scenesToLoad[i].isDone)
+            {
+                totalProgress += scenesToLoad[i].progress;
+                loadingProgressBar.fillAmount = totalProgress / scenesToLoad.Count;
+                yield return null;
+            }
+        }
+    }
+
+  
 }

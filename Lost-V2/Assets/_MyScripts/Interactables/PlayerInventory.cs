@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {   
-    public static bool[] keys = new bool[8];
+    public static bool[] keys = new bool[9];
 
     private void Awake()
     {

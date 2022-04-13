@@ -1,26 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class DialogueMainMage : Interactable
 {
+    [Header("Timeline")]
     [SerializeField] PlayableDirector dialogueMage;
     [SerializeField] GameObject timeline;
+    [Header("Player Movement Script")]
     [SerializeField] MonoBehaviour fpsController;
+    [Space(10)]
     [SerializeField] GameObject dialogueScript;
     [SerializeField] GameObject missionSelectionScript;
     bool cutsceneStarted = false;
+    bool cutsceneSkipped = false;
 
     IEnumerator StartCutscene()
     {
         cutsceneStarted = true;
         timeline.SetActive(true);
         fpsController.enabled = false;
-        yield return new WaitForSeconds((float)dialogueMage.duration);
+        yield return new WaitUntil(() => cutsceneSkipped);
         timeline.SetActive(false);
         fpsController.enabled = true;
         cutsceneStarted = false;
+        cutsceneSkipped = true;
         if (MissionSelection.numberOfCompletedMissions < 2)
         {
             missionSelectionScript.SetActive(true);
@@ -40,6 +44,18 @@ public class DialogueMainMage : Interactable
         if (!cutsceneStarted)
         {
             StartCoroutine(StartCutscene());
+        }
+    }
+
+    private void Update()
+    {
+        if (cutsceneStarted)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && cutsceneSkipped == false)
+            {
+                dialogueMage.time = dialogueMage.duration - 1;
+                cutsceneSkipped = true;
+            }
         }
     }
 }
