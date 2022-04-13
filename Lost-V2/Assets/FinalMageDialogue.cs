@@ -11,8 +11,11 @@ public class FinalMageDialogue : Interactable
     [SerializeField] UnityEvent startCutscene;
     [SerializeField] UnityEvent stopCutscene;
 
+
     bool cutsceneStarted = false;
     bool cutsceneSkipped = false;
+
+    public static bool talkedToTheMage = false;
 
     IEnumerator StartCutscene()
     {
@@ -22,6 +25,7 @@ public class FinalMageDialogue : Interactable
         stopCutscene.Invoke();
         cutsceneStarted = false;
         cutsceneSkipped = false;
+        talkedToTheMage = true;
     }
 
     private void Update()

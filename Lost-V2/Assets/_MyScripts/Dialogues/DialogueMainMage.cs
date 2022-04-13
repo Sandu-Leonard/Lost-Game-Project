@@ -12,11 +12,12 @@ public class DialogueMainMage : Interactable
     [Space(10)]
     [SerializeField] GameObject dialogueScript;
     [SerializeField] GameObject missionSelectionScript;
+    [SerializeField] GameObject keyToFilipsCell;
     bool cutsceneStarted = false;
     bool cutsceneSkipped = false;
 
     IEnumerator StartCutscene()
-    {
+    {        
         cutsceneStarted = true;
         timeline.SetActive(true);
         fpsController.enabled = false;
@@ -28,6 +29,10 @@ public class DialogueMainMage : Interactable
         if (MissionSelection.numberOfCompletedMissions < 2)
         {
             missionSelectionScript.SetActive(true);
+        }
+        else
+        {
+            keyToFilipsCell.SetActive(true);
         }
         dialogueScript.SetActive(false);
     }

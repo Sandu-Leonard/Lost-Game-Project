@@ -5,12 +5,14 @@ using UnityEngine.Events;
 
 public class GoToTheMageMission : MonoBehaviour
 {
-    [SerializeField]
-    UnityEvent goToTheMageEvent;
+    [SerializeField] GameObject finalMission;
 
     private void Update()
     {
-        goToTheMageEvent.Invoke();
+        if (FinalMageDialogue.talkedToTheMage == true)
+        {
+            finalMission.SetActive(true);
+        }
     }
 
 }

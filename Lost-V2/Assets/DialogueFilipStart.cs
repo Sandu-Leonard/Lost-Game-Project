@@ -32,12 +32,12 @@ public class DialogueFilipStart : Interactable
     }
     IEnumerator StartMissionSelect()
     {
-        selectMission.Invoke();
-        navMeshTest.enabled = true;
-        animator.SetTrigger("standing");
+        selectMission.Invoke();       
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;       
         yield return new WaitUntil(() => selectMissionOn);
+        animator.SetTrigger("standing");
+        navMeshTest.enabled = true;
         stopSelectMission.Invoke();
     }
 

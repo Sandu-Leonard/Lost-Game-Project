@@ -6,12 +6,18 @@ public class DoorManager : Interactable
 {
     [Header("Animations")]
     Animator animator;
-    string openAnimationName = "Open";
-    string closeAnimationName = "Close";
+    [SerializeField] string openAnimationName = "Open";
+    [SerializeField] string closeAnimationName = "Close";
+
+    [Header("On hover text")]
+    [SerializeField] string textOnHoverCantOpen = "You need a key to open this door!";
+    [SerializeField] string textOnHoverCanOpen = "Press[E] to open";
+    [SerializeField] string noTextToShow = "";
 
     [Header("Audio")]
     [SerializeField] AudioSource openSound;
     [SerializeField] AudioSource closeSound;
+
 
     bool isOpen = false;
     bool hasKey = false;
@@ -41,11 +47,11 @@ public class DoorManager : Interactable
     public override string GetDescription()
     {
         if (!isOpen && !hasKey)
-            return "You need a key to open this door!";
+            return textOnHoverCantOpen;
 
         if (!isOpen && hasKey)
-            return "Press[E] to open.";
-        return "";
+            return textOnHoverCanOpen;
+        return noTextToShow;
     }
 
     void OpenDoor()
