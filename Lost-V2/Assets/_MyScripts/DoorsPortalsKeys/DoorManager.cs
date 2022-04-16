@@ -24,7 +24,9 @@ public class DoorManager : Interactable
 
     [Space(10)]
     public int index = -1;
+    [Header("Timers")]
     [SerializeField] float timeBeforeDoorCloses = 6;
+    [SerializeField] float timeBeforeDoorCanBeOpenedAgain = 2;
 
     private void Start()
     {
@@ -38,25 +40,28 @@ public class DoorManager : Interactable
 
     private void Update()
     {
+        CheckIfHasKey();
+    }
+    void CheckIfHasKey()
+    {
         if (PlayerInventory.keys[index] == true)
         {
             hasKey = true;
         }
-    } 
-
+    }
     public override string GetDescription()
     {
-        if (!isOpen && !hasKey)
+        if (isOpen == false && hasKey==false)
             return textOnHoverCantOpen;
 
-        if (!isOpen && hasKey)
+        if (isOpen == false && hasKey)
             return textOnHoverCanOpen;
         return noTextToShow;
     }
 
     void OpenDoor()
     {
-        if (hasKey && !isOpen)
+        if (hasKey && isOpen == false)
         {
             animator.SetTrigger(openAnimationName);
             openSound.Play();
@@ -70,7 +75,8 @@ public class DoorManager : Interactable
         yield return new WaitForSeconds(timeBeforeDoorCloses);
         animator.SetTrigger(closeAnimationName);
         closeSound.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timeBeforeDoorCanBeOpenedAgain);
         isOpen = false;
+        
     }
 }

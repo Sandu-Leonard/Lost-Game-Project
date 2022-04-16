@@ -9,6 +9,7 @@ public class Fireballs : MonoBehaviour
     [SerializeField] GameObject respawnPosition2;
     [SerializeField] GameObject key;
     [SerializeField] AudioSource shootSound;
+    private RespawnManager respawnManager;
 
     int currnetNumberOfParticles;
 
@@ -16,21 +17,17 @@ public class Fireballs : MonoBehaviour
     private void Start()
     {
         particleSys = GetComponent<ParticleSystem>();
-        
+        respawnManager = GameObject.FindGameObjectWithTag("RespawnManager").GetComponent<RespawnManager>();
+
     }
 
     private void OnParticleCollision(GameObject other)
     {
         if (other.CompareTag("Player"))
-            if (key.activeInHierarchy)
-            {
-                player.transform.position = respawnPositionStart.transform.position;
-
-            }
-            else
-            {
-                player.transform.position = respawnPosition2.transform.position;
-            }
+        {
+            player.transform.position = respawnManager.lastCheckpointPosition;
+        }
+            
     }
 
     private void Update()

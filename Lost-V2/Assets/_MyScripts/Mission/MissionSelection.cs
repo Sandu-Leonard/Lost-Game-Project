@@ -16,6 +16,7 @@ public class MissionSelection : Interactable
     public static bool isAnyMissionInProgress = false;
     public static int numberOfCompletedMissions = 0;
 
+
     [SerializeField] UnityEvent showMissions;
     [SerializeField] UnityEvent acceptMission;
     [SerializeField] UnityEvent closeMissionPanel;
@@ -23,6 +24,7 @@ public class MissionSelection : Interactable
     [SerializeField] UnityEvent acceptBreakMission;
     [SerializeField] UnityEvent acceptGoToTheMageMission;
     [SerializeField] UnityEvent acceptLeaveTheDungeonMission;
+
 
     public override string GetDescription()
     {

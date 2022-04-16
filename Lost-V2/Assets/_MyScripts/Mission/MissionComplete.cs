@@ -18,10 +18,13 @@ public class MissionComplete : Interactable
     [Header("Mission Status")]
     [SerializeField] GameObject completeMissionStatus;
     [SerializeField] GameObject finishedMissionsDialogue;
+    [Space(10)]
+    [SerializeField] PauseManager pauseManager;
 
     bool cutsceneSkipped = false;
     IEnumerator CompleteMission()
     {
+        pauseManager.enabled = false;
         timeline.SetActive(true);
         playerFpsController.enabled = false;
         mageBoxCollider.enabled = false;
@@ -36,7 +39,11 @@ public class MissionComplete : Interactable
         if (MissionSelection.numberOfCompletedMissions == 2)
             finishedMissionsDialogue.SetActive(true);
         else
+        {
             missionSelection.SetActive(true);
+        }
+        pauseManager.enabled = true;
+        
     }
     public override string GetDescription()
     {

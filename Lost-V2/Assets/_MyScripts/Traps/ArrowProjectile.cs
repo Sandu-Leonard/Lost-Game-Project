@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class ArrowProjectile : MonoBehaviour
 { 
-    BoxCollider boxCollider;
-    [SerializeField]Rigidbody rigidB;
+    [SerializeField] Rigidbody rigidB;
     [SerializeField] float arrowSpeed = 300f;
+    GameObject player;
+    RespawnManager respawnManager;
 
     private void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        respawnManager = GameObject.FindGameObjectWithTag("RespawnManager").GetComponent<RespawnManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
         rigidB.AddRelativeForce(new Vector3(0, 0, arrowSpeed));
+        Destroy(gameObject, 5f);
     }
 
 
@@ -25,7 +28,7 @@ public class ArrowProjectile : MonoBehaviour
         {
             print("HIT!");
             Destroy(gameObject);
-            //respawn player
+            player.GetComponent<Transform>().transform.position = respawnManager.lastCheckpointPosition;
         }
     }
 

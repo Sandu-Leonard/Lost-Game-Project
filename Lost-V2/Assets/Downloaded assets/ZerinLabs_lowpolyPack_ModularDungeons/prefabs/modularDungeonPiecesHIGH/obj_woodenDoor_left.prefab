@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8777058492272704707}
   - component: {fileID: 330282904304371445}
   - component: {fileID: 6316843725611448844}
-  - component: {fileID: -9200462347465139064}
+  - component: {fileID: 6673058747243118827}
   m_Layer: 0
   m_Name: obj_woodenDoor_left
   m_TagString: Untagged
@@ -83,8 +83,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-9200462347465139064
-MeshCollider:
+--- !u!65 &6673058747243118827
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,7 +93,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1861940760984111184, guid: ebf0e51ff8cff754babe56364facb3b8, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.7799253, y: 4.6836767, z: 0.698922}
+  m_Center: {x: -0.84010696, y: 0.5085603, z: -0.00000008940697}

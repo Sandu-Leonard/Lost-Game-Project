@@ -12,6 +12,7 @@ public class OpenDoorToPart2 : MonoBehaviour
     [SerializeField] PlayableDirector timelineDirector;
     [SerializeField] GameObject playerCamera;
     [SerializeField] MonoBehaviour playerFpsController;
+    [SerializeField] PauseManager pauseManager;
 
     private void Update()
     {
@@ -22,6 +23,7 @@ public class OpenDoorToPart2 : MonoBehaviour
     {
         if (numberOfActiveSpheres == 4)
         {
+            pauseManager.enabled = false;
             playerCamera.SetActive(false);
             timeline.SetActive(true);
             playerFpsController.enabled = false;
@@ -32,6 +34,7 @@ public class OpenDoorToPart2 : MonoBehaviour
             playerCamera.SetActive(true);
             playerFpsController.enabled = true;
             numberOfActiveSpheres = 0;
+            pauseManager.enabled = true;
         }
     }
 }

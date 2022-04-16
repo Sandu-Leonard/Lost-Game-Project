@@ -14,6 +14,8 @@ TagManager:
   - Break
   - Retrieve
   - KeyToCell
+  - GameManager
+  - RespawnManager
   layers:
   - Default
   - TransparentFX

@@ -6932,6 +6932,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionType: 0
+  openAnimationName: Open
+  closeAnimationName: Close
+  textOnHoverCantOpen: You need a key to open this door!
+  textOnHoverCanOpen: Press[E] to open
+  noTextToShow: 
   openSound: {fileID: 1842063151}
   closeSound: {fileID: 1863920689}
   index: 0
