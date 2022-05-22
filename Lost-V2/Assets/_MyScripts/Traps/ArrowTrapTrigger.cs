@@ -7,9 +7,11 @@ public class ArrowTrapTrigger : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] Transform arrowPositionRight;
     [SerializeField] Transform arrowPositionLeft;
+
+    private string playerTag = "Player";
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             ArrowTrapManager.instance.InstantiateArrow(arrow, arrowPositionRight, arrowPositionLeft);
         }

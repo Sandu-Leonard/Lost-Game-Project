@@ -131,11 +131,11 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   radius:
-    overrideState: 0
+    overrideState: 1
     value: 0.25
   quality:
     overrideState: 1
-    value: 4
+    value: 3
 --- !u!114 &-1077379488375119676
 MonoBehaviour:
   m_ObjectHideFlags: 3

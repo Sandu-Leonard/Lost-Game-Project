@@ -5,8 +5,13 @@ using UnityEngine;
 public class StoneKeyPillarRising : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    string risingAnimation = "rising";
+    private int risingAnimation;
     [SerializeField] ParticleSystem flames;
+
+    private void Awake()
+    {
+        risingAnimation = Animator.StringToHash("rising");
+    }
 
     private void Update()
     {

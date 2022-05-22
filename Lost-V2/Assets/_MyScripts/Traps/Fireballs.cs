@@ -5,11 +5,10 @@ using UnityEngine;
 public class Fireballs : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameObject respawnPositionStart;
-    [SerializeField] GameObject respawnPosition2;
-    [SerializeField] GameObject key;
     [SerializeField] AudioSource shootSound;
     private RespawnManager respawnManager;
+
+    private string playerTag = "Player";
 
     int currnetNumberOfParticles;
 
@@ -23,7 +22,7 @@ public class Fireballs : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(playerTag))
         {
             player.transform.position = respawnManager.lastCheckpointPosition;
         }

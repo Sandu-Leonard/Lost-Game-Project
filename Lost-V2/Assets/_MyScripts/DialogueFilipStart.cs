@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Events;
@@ -15,10 +14,17 @@ public class DialogueFilipStart : Interactable
     [SerializeField] UnityEvent selectMission;
     [SerializeField] UnityEvent stopSelectMission;
 
+    private int standingAnimation;
+
     bool cutsceneStarted = false;
     bool cutsceneSkipped = false;
 
     public static bool selectMissionOn = false;
+
+    private void Awake()
+    {
+        standingAnimation = Animator.StringToHash("standing");
+    }
 
     IEnumerator StartCutscene()
     {
@@ -36,7 +42,7 @@ public class DialogueFilipStart : Interactable
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;       
         yield return new WaitUntil(() => selectMissionOn);
-        animator.SetTrigger("standing");
+        animator.SetTrigger(standingAnimation);
         navMeshTest.enabled = true;
         stopSelectMission.Invoke();
     }

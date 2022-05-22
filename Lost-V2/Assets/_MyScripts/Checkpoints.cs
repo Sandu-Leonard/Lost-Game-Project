@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoints : MonoBehaviour
 {
     private RespawnManager respawnManager;
+    private string playerTag = "Player";
 
     private void Start()
     {
@@ -12,7 +13,7 @@ public class Checkpoints : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(playerTag))
         { 
             respawnManager.lastCheckpointPosition = transform.position;
         }

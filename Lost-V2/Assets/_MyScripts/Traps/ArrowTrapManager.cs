@@ -11,14 +11,6 @@ public class ArrowTrapManager : MonoBehaviour
         instance = this;      
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.G))
-    //    {
-    //        InstantiateArrow();
-    //    }
-    //}
-
     public void InstantiateArrow(GameObject arrow, Transform arrowPosition, Transform arrowPosition2)
     {
         Instantiate(arrow, arrowPosition.transform.position, arrowPosition.transform.localRotation);

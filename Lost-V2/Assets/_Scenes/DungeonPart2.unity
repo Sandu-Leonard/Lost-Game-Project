@@ -9,7 +9,7 @@ OcclusionCullingSettings:
     smallestHole: 0.25
     backfaceThreshold: 100
   m_SceneGUID: f64e4989687591848b40672770f56d44
-  m_OcclusionCullingData: {fileID: 36300000, guid: e09403b70c6774f4881ec1d77c410b99, type: 2}
+  m_OcclusionCullingData: {fileID: 36300000, guid: f44145714baa1264c8cd18cffb55d4e1, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -6932,8 +6932,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionType: 0
-  openAnimationName: Open
-  closeAnimationName: Close
   textOnHoverCantOpen: You need a key to open this door!
   textOnHoverCanOpen: Press[E] to open
   noTextToShow: 
@@ -6941,6 +6939,7 @@ MonoBehaviour:
   closeSound: {fileID: 1863920689}
   index: 0
   timeBeforeDoorCloses: 6
+  timeBeforeDoorCanBeOpenedAgain: 2
 --- !u!95 &6301406986322570831
 Animator:
   serializedVersion: 3

@@ -1,22 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorManager : Interactable
 {
     [Header("Animations")]
-    Animator animator;
-    [SerializeField] string openAnimationName = "Open";
-    [SerializeField] string closeAnimationName = "Close";
+    private Animator animator;
+    private int openAnimationName;
+    private int closeAnimationName;
 
     [Header("On hover text")]
-    [SerializeField] string textOnHoverCantOpen = "You need a key to open this door!";
-    [SerializeField] string textOnHoverCanOpen = "Press[E] to open";
-    [SerializeField] string noTextToShow = "";
+    [SerializeField]
+    private string textOnHoverCantOpen = "You need a key to open this door!";
+
+    [SerializeField]
+    private string textOnHoverCanOpen = "Press[E] to open";
+
+    [SerializeField]
+    private string noTextToShow = string.Empty;
 
     [Header("Audio")]
-    [SerializeField] AudioSource openSound;
-    [SerializeField] AudioSource closeSound;
+    [SerializeField]
+    private AudioSource openSound;
+    [SerializeField]
+    private AudioSource closeSound;
 
 
     bool isOpen = false;
@@ -25,8 +31,16 @@ public class DoorManager : Interactable
     [Space(10)]
     public int index = -1;
     [Header("Timers")]
-    [SerializeField] float timeBeforeDoorCloses = 6;
-    [SerializeField] float timeBeforeDoorCanBeOpenedAgain = 2;
+    [SerializeField]
+    private float timeBeforeDoorCloses = 6;
+    [SerializeField]
+    private float timeBeforeDoorCanBeOpenedAgain = 2;
+
+    private void Awake()
+    {
+        openAnimationName = Animator.StringToHash("Open");
+        closeAnimationName = Animator.StringToHash("Close");
+    }
 
     private void Start()
     {
@@ -35,7 +49,7 @@ public class DoorManager : Interactable
 
     public override void Interact()
     {
-        OpenDoor();    
+        OpenDoor();
     }
 
     private void Update()
@@ -51,7 +65,7 @@ public class DoorManager : Interactable
     }
     public override string GetDescription()
     {
-        if (isOpen == false && hasKey==false)
+        if (isOpen == false && hasKey == false)
             return textOnHoverCantOpen;
 
         if (isOpen == false && hasKey)
@@ -77,6 +91,6 @@ public class DoorManager : Interactable
         closeSound.Play();
         yield return new WaitForSeconds(timeBeforeDoorCanBeOpenedAgain);
         isOpen = false;
-        
+
     }
 }

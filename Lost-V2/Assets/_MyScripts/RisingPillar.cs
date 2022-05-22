@@ -6,13 +6,18 @@ public class RisingPillar : Interactable
 {
     public static int numberOfActivePillars;
     bool isPillarActive = false;
-    string risingAnimation = "rising";
+    private int risingAnimation;
     [SerializeField] Animator animator;
     [SerializeField] Light[] lights;
-    
+
+    private void Awake()
+    {
+        risingAnimation = Animator.StringToHash("rising");
+    }
+
     public override string GetDescription()
     {
-        if(isPillarActive==false)
+        if (isPillarActive == false)
             return "Press [E] to activate";
         return "";
     }
@@ -22,7 +27,7 @@ public class RisingPillar : Interactable
         ActivatePillar();
     }
 
-    void ActivatePillar() 
+    void ActivatePillar()
     {
         if (isPillarActive == false)
         {

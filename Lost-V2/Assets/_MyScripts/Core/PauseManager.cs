@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] GameObject pauseMenuScreen;
     [SerializeField] MonoBehaviour fpsControllerScript;
     [SerializeField] AudioListener audioListener;
+
+    private string mainMenuScene = "MainMenu";
 
     void Update()
     {
@@ -38,7 +41,7 @@ public class PauseManager : MonoBehaviour
         pauseMenuScreen.SetActive(true);
         Time.timeScale = 0f;
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;        
+        Cursor.lockState = CursorLockMode.None;
         AudioListener.pause = true;
         gameIsPaused = true;
     }
@@ -49,12 +52,12 @@ public class PauseManager : MonoBehaviour
         AudioListener.pause = false;
         fpsControllerScript.enabled = true;
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(mainMenuScene);
     }
     public void ExitGameButton()
     {
         Application.Quit();
     }
-        
+
 }
 

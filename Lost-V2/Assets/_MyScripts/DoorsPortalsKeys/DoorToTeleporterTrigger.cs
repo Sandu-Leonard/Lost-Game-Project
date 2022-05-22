@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorToTeleporterTrigger : Interactable
@@ -9,7 +7,15 @@ public class DoorToTeleporterTrigger : Interactable
     [SerializeField] Animator doorRightAnim;
     [SerializeField] Animator doorLeftAnim;
 
+    private int openRightDoorAnimation;
+    private int openLeftDoorAnimation;
 
+    private void Awake()
+    {
+        openRightDoorAnimation = Animator.StringToHash("ironRopen");
+        openLeftDoorAnimation = Animator.StringToHash("ironLopen");
+
+    }
 
     bool isSkullPlaced = false;
     public int index = -1;
@@ -18,8 +24,9 @@ public class DoorToTeleporterTrigger : Interactable
     {
         if (isSkullPlaced == false && PlayerInventory.keys[index] == true)
             return "Press [E] to place the skull.";
-        else
-            return " ";
+        else if (isSkullPlaced == false && PlayerInventory.keys[index] == false)
+            return "I need something to activate this with.";
+        else return "";
     }
 
     public override void Interact()
@@ -32,8 +39,8 @@ public class DoorToTeleporterTrigger : Interactable
         if (isSkullPlaced == false && PlayerInventory.keys[index] == true)
         {
             skullPlaced.SetActive(true);
-            doorRightAnim.SetTrigger("ironRopen");
-            doorLeftAnim.SetTrigger("ironLopen");
+            doorRightAnim.SetTrigger(openRightDoorAnimation);
+            doorLeftAnim.SetTrigger(openLeftDoorAnimation);
             isSkullPlaced = true;
         }
 

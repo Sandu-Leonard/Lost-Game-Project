@@ -7,6 +7,8 @@ public class RespawnPlayer : MonoBehaviour
     [SerializeField] GameObject player;
     RespawnManager respawnManager;
 
+    private string playerTag = "Player";
+
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class RespawnPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             Respawn();
         }

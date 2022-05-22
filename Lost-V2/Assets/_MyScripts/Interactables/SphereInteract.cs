@@ -10,8 +10,13 @@ public class SphereInteract : Interactable
     Animator animator;
     Renderer rend;
 
-    string animationParameter = "bounce";
+    private int animationParameter;
     string emission = "_EMISSION";
+
+    private void Awake()
+    {
+        animationParameter = Animator.StringToHash("bounce");
+    }
 
     private void Start()
     {

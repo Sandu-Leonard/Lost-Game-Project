@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class FinalMageDialogue : Interactable
 {
     [SerializeField] PlayableDirector playableDirector;
+    [SerializeField] PauseManager pauseManager;
 
     [SerializeField] UnityEvent startCutscene;
     [SerializeField] UnityEvent stopCutscene;
@@ -20,12 +21,14 @@ public class FinalMageDialogue : Interactable
     IEnumerator StartCutscene()
     {
         cutsceneStarted = true;
+        pauseManager.enabled = false;
         startCutscene.Invoke();
         yield return new WaitUntil(() => cutsceneSkipped);
         stopCutscene.Invoke();
         cutsceneStarted = false;
         cutsceneSkipped = false;
         talkedToTheMage = true;
+        pauseManager.enabled = true;
     }
 
     private void Update()

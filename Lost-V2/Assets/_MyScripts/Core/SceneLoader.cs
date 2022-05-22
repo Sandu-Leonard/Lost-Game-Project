@@ -12,8 +12,9 @@ public enum TriggerMethod
 public class SceneLoader : MonoBehaviour
 {
     //public Transform player;
-    public TriggerMethod triggerMethod;
+    private string playerTag = "Player";
 
+    public TriggerMethod triggerMethod;
     private bool isLoaded;
     private bool shouldLoad;
     void Start()
@@ -59,7 +60,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(playerTag))
         {
             shouldLoad = true;
         }
@@ -67,7 +68,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(playerTag))
         {
             shouldLoad = false;
         }

@@ -9,13 +9,15 @@ public class ArrowProjectile : MonoBehaviour
     GameObject player;
     RespawnManager respawnManager;
 
+    private string playerTag = "Player";
+
     private void Start()
     {
         respawnManager = GameObject.FindGameObjectWithTag("RespawnManager").GetComponent<RespawnManager>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         rigidB.AddRelativeForce(new Vector3(0, 0, arrowSpeed));
         Destroy(gameObject, 5f);
@@ -24,9 +26,8 @@ public class ArrowProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
-            print("HIT!");
             Destroy(gameObject);
             player.GetComponent<Transform>().transform.position = respawnManager.lastCheckpointPosition;
         }

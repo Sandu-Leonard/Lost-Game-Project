@@ -10,6 +10,8 @@ public class Teleporter : MonoBehaviour
     [SerializeField] ParticleSystem teleportParticles;
     [SerializeField] TMP_Text reticleText;
 
+    private string playerTag = "Player";
+
     bool readyToTeleport = false;
     bool teleportButtonPressed = false;
 
@@ -23,7 +25,7 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {      
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             readyToTeleport = true;
             reticleText.text = "Press [E] to teleport.";
@@ -32,7 +34,7 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        reticleText.text = "";
+        reticleText.text = string.Empty;
         readyToTeleport = false;
         teleportButtonPressed = false;
     }
