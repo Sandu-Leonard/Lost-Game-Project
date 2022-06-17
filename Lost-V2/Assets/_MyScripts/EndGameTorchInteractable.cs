@@ -11,6 +11,10 @@ public class EndGameTorchInteractable : Interactable
     [SerializeField] PauseManager pauseManager;
     [SerializeField] UnityEvent startCutscene;
     [SerializeField] UnityEvent stopCutscene;
+    [SerializeField] GameObject credits;
+
+    bool canSkip = false;
+    bool cutsceneFinished = false;
 
 
     bool interacted = false;
@@ -34,8 +38,24 @@ public class EndGameTorchInteractable : Interactable
         pauseManager.enabled = false;
         startCutscene.Invoke();
         yield return new WaitForSeconds((float)timeline.duration);
+        cutsceneFinished = true;
         stopCutscene.Invoke();
-        pauseManager.enabled = true;
-        //SceneManager.LoadScene("MainMenu");
-    }   
+        //pauseManager.enabled = true;
+        yield return new WaitUntil(() => canSkip == true);
+        pauseManager.LoadingScreen();
+    }
+
+    private void Update()
+    {
+        if (interacted == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && cutsceneFinished == true)
+            {
+                credits.SetActive(false);
+
+                pauseManager.enabled = true;
+                canSkip = true;
+            }
+        }
+    }
 }

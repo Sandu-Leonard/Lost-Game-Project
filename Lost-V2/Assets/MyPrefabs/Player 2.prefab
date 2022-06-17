@@ -58,8 +58,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 100
+  near clip plane: 0.1
+  far clip plane: 95
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 1976798260505513418}
   - component: {fileID: 1976798259337756539}
   - component: {fileID: 1976798259337756541}
-  - component: {fileID: 6899698584868963447}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -450,18 +449,6 @@ CapsuleCollider:
   m_Height: 1.9520802
   m_Direction: 1
   m_Center: {x: 0, y: 0.47604012, z: 0}
---- !u!114 &6899698584868963447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976798259337756534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c269c06e0ff120548b8fbc6cfee922f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1976798259682716342
 GameObject:
   m_ObjectHideFlags: 0

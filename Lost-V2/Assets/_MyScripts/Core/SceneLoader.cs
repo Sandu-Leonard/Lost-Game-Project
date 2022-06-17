@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour
     public TriggerMethod triggerMethod;
     private bool isLoaded;
     private bool shouldLoad;
-    void Start()
+    void Awake()
     {
         if (SceneManager.sceneCount > 0)
         {

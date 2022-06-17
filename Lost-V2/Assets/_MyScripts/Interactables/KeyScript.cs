@@ -13,6 +13,6 @@ public class KeyScript : Interactable
     public override void Interact()
     {
         gameObject.SetActive(false);
-        PlayerInventory.keys[GetComponent<KeyScript>().keyIndex] = true;
+        PlayerInventory.keys[keyIndex] = true;
     }
 }

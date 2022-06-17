@@ -25,7 +25,7 @@ public class SphereInteract : Interactable
     }
     public override string GetDescription()
     {
-        if (!isSphereOn && !rockKey.activeInHierarchy)
+        if (isSphereOn == false && !rockKey.activeInHierarchy)
             return "Press [E] to activate!";
         else 
             return "";
@@ -38,9 +38,8 @@ public class SphereInteract : Interactable
 
     private void ActivateSphere()
     {
-        if (!pressed && !rockKey.activeInHierarchy)
+        if (isSphereOn == false && !rockKey.activeInHierarchy)
         {
-            pressed = true;
             OpenDoorToPart2.numberOfActiveSpheres++;
             isSphereOn = true;
             rend.material.EnableKeyword(emission);

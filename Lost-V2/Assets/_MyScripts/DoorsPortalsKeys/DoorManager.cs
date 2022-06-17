@@ -13,7 +13,7 @@ public class DoorManager : Interactable
     private string textOnHoverCantOpen = "You need a key to open this door!";
 
     [SerializeField]
-    private string textOnHoverCanOpen = "Press[E] to open";
+    private string textOnHoverCanOpen = "Press [E] to open";
 
     [SerializeField]
     private string noTextToShow = string.Empty;
@@ -41,6 +41,10 @@ public class DoorManager : Interactable
         openAnimationName = Animator.StringToHash("Open");
         closeAnimationName = Animator.StringToHash("Close");
     }
+    private void Update()
+    {
+        CheckIfHasKey();
+    }
 
     private void Start()
     {
@@ -50,11 +54,6 @@ public class DoorManager : Interactable
     public override void Interact()
     {
         OpenDoor();
-    }
-
-    private void Update()
-    {
-        CheckIfHasKey();
     }
     void CheckIfHasKey()
     {
@@ -68,14 +67,14 @@ public class DoorManager : Interactable
         if (isOpen == false && hasKey == false)
             return textOnHoverCantOpen;
 
-        if (isOpen == false && hasKey)
+        if (isOpen == false && hasKey == true)
             return textOnHoverCanOpen;
         return noTextToShow;
     }
 
     void OpenDoor()
     {
-        if (hasKey && isOpen == false)
+        if (hasKey == true && isOpen == false)
         {
             animator.SetTrigger(openAnimationName);
             openSound.Play();

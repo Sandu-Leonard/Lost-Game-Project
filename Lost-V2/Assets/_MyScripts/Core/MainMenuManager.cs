@@ -8,9 +8,13 @@ using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] string gameLevelScene;
-    [SerializeField] GameObject menu;
+
+    //SCENES
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
+    [SerializeField] private string gameLevelScene;
+
+    [SerializeField] GameObject menu;
+    
     [Header("Loading Screen")]
     [SerializeField] GameObject loadingInterface;
     [SerializeField] Image loadingProgressBar;
@@ -22,20 +26,26 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] TMP_Text volumeTextValue = null;
     [SerializeField] Slider volumeSlider;
 
+    //KEYS
+    private string masterVolumeKey = "MasterVolume";
+    private string qualitySettingKey = "QualitySetting";
+
     private void Awake()
     {
         LoadSettings();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void StartGameYesButton()
     {
         HideMenu();
         //ShowLoadingScreen();
-        PlayerPrefs.GetFloat("MasterVolume");
-        //scenesToLoad.Add(SceneManager.UnloadSceneAsync("MainMenu"));
+        PlayerPrefs.GetFloat(masterVolumeKey);
+        
         scenesToLoad.Add(SceneManager.LoadSceneAsync(gameLevelScene));
-       // scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync("IntroPart", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("TerrainScene", LoadSceneMode.Additive));
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("IntroPart", LoadSceneMode.Additive));
         StartCoroutine(LoadingScreen());
 
     }
@@ -55,7 +65,7 @@ public class MainMenuManager : MonoBehaviour
         int qualitySettingIndex = dropDownQuality.value;
         QualitySettings.SetQualityLevel(qualitySettingIndex);
         Debug.Log("value is " + qualitySettingIndex + " " + dropDownQuality.value);
-        PlayerPrefs.SetInt("QualitySetting", qualitySettingIndex);
+        PlayerPrefs.SetInt(qualitySettingKey, qualitySettingIndex);
         PlayerPrefs.Save();
     }
 
@@ -67,15 +77,15 @@ public class MainMenuManager : MonoBehaviour
 
     public void VolumeApplyButton()
     {
-        PlayerPrefs.SetFloat("MasterVolume", AudioListener.volume);
+        PlayerPrefs.SetFloat(masterVolumeKey, AudioListener.volume);
     }
 
     void LoadSettings()
     {
-        if (PlayerPrefs.HasKey("QualitySetting"))
-            dropDownQuality.value = PlayerPrefs.GetInt("QualitySetting");
-        if (PlayerPrefs.HasKey("MasterVolume"))
-            volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+        if (PlayerPrefs.HasKey(qualitySettingKey))
+            dropDownQuality.value = PlayerPrefs.GetInt(qualitySettingKey);
+        if (PlayerPrefs.HasKey(masterVolumeKey))
+            volumeSlider.value = PlayerPrefs.GetFloat(masterVolumeKey);
     }
 
     void ShowLoadingScreen()
@@ -86,23 +96,6 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator LoadingScreen()
     {
         loadingInterface.SetActive(true);
-        //float totalProgress = 0;
-        //for (int i = 0; i < scenesToLoad.Count; i++)
-        //{
-        //    while (!scenesToLoad[i].isDone)
-        //    {
-        //        totalProgress = 0;
-        //        foreach (AsyncOperation operation in scenesToLoad)
-        //        {
-        //            totalProgress += operation.progress;
-        //        }
-        //        totalProgress = (totalProgress / scenesToLoad.Count);
-        //        loadingProgressBar.fillAmount = Mathf.RoundToInt(totalProgress);
-        //        yield return null;
-        //    }
-
-        //}
-        //loadingInterface.SetActive(false); 
         float totalProgress = 0;
         for (int i = 0; i < scenesToLoad.Count; i++)
         {

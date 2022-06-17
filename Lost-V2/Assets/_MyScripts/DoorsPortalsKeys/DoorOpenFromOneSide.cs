@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorOpenFromOneSide : Interactable
 {
+    private static DoorOpenFromOneSide instance;
     private BoxCollider boxCollider;
     private Animator animator;
     private int openAnimation;
@@ -18,6 +19,7 @@ public class DoorOpenFromOneSide : Interactable
         animator = GetComponent<Animator>();
         openAnimation = Animator.StringToHash("Open");
         closeAnimation = Animator.StringToHash("Close");
+
     }
     public override string GetDescription()
     {

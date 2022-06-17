@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] PlayableDirector playableDirector;
-    [SerializeField] GameObject timeline;
     [SerializeField] int timeBeforeIsSkippable = 3;
     bool cutsceneStarted = false;
     bool cutsceneSkipped = false;
@@ -16,6 +15,8 @@ public class CutsceneManager : MonoBehaviour
     UnityEvent startCutscene;
     [SerializeField]
     UnityEvent stopCutscene;
+
+
 
     private void Update()
     {

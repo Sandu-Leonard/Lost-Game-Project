@@ -7,7 +7,7 @@ public class DialogueFilipStart : Interactable
 {
     [SerializeField] PlayableDirector playableDirector;
     [SerializeField] Animator animator;
-    [SerializeField] NPCNavMeshTest navMeshTest;
+    [SerializeField] FilipAI filipAI;
 
     [SerializeField] UnityEvent startCutscene;
     [SerializeField] UnityEvent stopCutscene;
@@ -43,7 +43,7 @@ public class DialogueFilipStart : Interactable
         Cursor.lockState = CursorLockMode.None;       
         yield return new WaitUntil(() => selectMissionOn);
         animator.SetTrigger(standingAnimation);
-        navMeshTest.enabled = true;
+        filipAI.enabled = true;
         stopSelectMission.Invoke();
     }
 

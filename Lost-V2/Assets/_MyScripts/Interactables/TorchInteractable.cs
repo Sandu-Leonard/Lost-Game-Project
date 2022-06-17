@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class TorchInteractable : Interactable
 {
+    public bool canHideTorch = false;
+
     [SerializeField]
     UnityEvent pickupTorch;
 
@@ -16,6 +18,7 @@ public class TorchInteractable : Interactable
     public override void Interact()
     {
         pickupTorch.Invoke();
+        canHideTorch = true;
     }
 
 }

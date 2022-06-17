@@ -8,6 +8,7 @@ public class PlayerPosition : MonoBehaviour
     {
         respawnManager = GameObject.FindGameObjectWithTag("RespawnManager").GetComponent<RespawnManager>();
         transform.position = respawnManager.lastCheckpointPosition;
+
     }
 
 }
