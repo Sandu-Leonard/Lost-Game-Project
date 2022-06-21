@@ -5,11 +5,11 @@ using UnityEngine;
 public class UISoundEffects : MonoBehaviour
 {
     [SerializeField]
-    AudioSource audioSource;
+    private AudioSource audioSource;
     [SerializeField]
-    AudioClip onHover;
+    private AudioClip onHover;
     [SerializeField]
-    AudioClip onClick;
+    private AudioClip onClick;
 
 
     public void OnHover()

@@ -8,9 +8,12 @@ public class DoorOpenFromOneSide : Interactable
     private BoxCollider boxCollider;
     private Animator animator;
     private int openAnimation;
-    private int closeAnimation;
 
     public CheckPositionToTheDoor checkPosition;
+
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource openSound;
 
 
     private void Awake()
@@ -18,8 +21,6 @@ public class DoorOpenFromOneSide : Interactable
         boxCollider = GetComponent<BoxCollider>();
         animator = GetComponent<Animator>();
         openAnimation = Animator.StringToHash("Open");
-        closeAnimation = Animator.StringToHash("Close");
-
     }
     public override string GetDescription()
     {
@@ -32,6 +33,7 @@ public class DoorOpenFromOneSide : Interactable
     {
         if (checkPosition.canOpen)
         {
+            openSound.Play();
             animator.SetTrigger(openAnimation);
             boxCollider.enabled = false;
         }

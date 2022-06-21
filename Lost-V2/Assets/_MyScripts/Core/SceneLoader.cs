@@ -4,17 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum TriggerMethod
-{ 
-    Trigger
-}
-
 public class SceneLoader : MonoBehaviour
 {
     //public Transform player;
     private string playerTag = "Player";
-
-    public TriggerMethod triggerMethod;
     private bool isLoaded;
     private bool shouldLoad;
     void Awake()
@@ -34,10 +27,7 @@ public class SceneLoader : MonoBehaviour
 
     void Update()
     {
-        if (triggerMethod == TriggerMethod.Trigger)
-        {
-            TriggerCheck();
-        }
+        TriggerCheck();
     }
 
     void LoadScene()
@@ -48,7 +38,6 @@ public class SceneLoader : MonoBehaviour
             isLoaded = true;
         }
     }
-
     void UnloadScene()
     {
         if (isLoaded)

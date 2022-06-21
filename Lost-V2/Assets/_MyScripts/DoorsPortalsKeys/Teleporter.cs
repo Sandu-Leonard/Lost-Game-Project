@@ -5,15 +5,15 @@ using TMPro;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject teleportLocation;
-    [SerializeField] ParticleSystem teleportParticles;
-    [SerializeField] TMP_Text reticleText;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject teleportLocation;
+    [SerializeField] private ParticleSystem teleportParticles;
+    [SerializeField] private TMP_Text reticleText;
 
     private string playerTag = "Player";
 
-    bool readyToTeleport = false;
-    bool teleportButtonPressed = false;
+    private bool readyToTeleport = false;
+    private bool teleported = false;
 
     private void Update()
     {
@@ -22,31 +22,32 @@ public class Teleporter : MonoBehaviour
             StartCoroutine(Teleport());        
         }
     }
-
+    IEnumerator Teleport()
+    {
+        if (teleported == false)
+        {
+            teleported = true;
+            teleportParticles.Play();
+            var mainParticleSettings = teleportParticles.main;
+            yield return new WaitForSeconds(mainParticleSettings.duration);
+            player.transform.position = teleportLocation.transform.position;
+        }
+    }
+    
     private void OnTriggerStay(Collider other)
     {      
-        if (other.tag == playerTag)
+        if (other.CompareTag(playerTag))
         {
             readyToTeleport = true;
             reticleText.text = "Press [E] to teleport.";
         }
     }
-
     private void OnTriggerExit(Collider other)
-    {
-        reticleText.text = string.Empty;
+    {     
         readyToTeleport = false;
-        teleportButtonPressed = false;
+        reticleText.text = string.Empty;
+        teleported = false;
     }
 
-    IEnumerator Teleport()
-    {
-        if (!teleportButtonPressed)
-        {
-            teleportButtonPressed = true;
-            teleportParticles.Play();
-            yield return new WaitForSeconds(3);
-            player.transform.position = teleportLocation.transform.position;          
-        } 
-    }
+    
 }
